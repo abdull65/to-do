@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Montserrat";
+    font-size: 10px;
+}
+#container {
+    width: 500px;
+    height: 100%;
+    margin: 200px auto 0;
+    background-color: #282b44;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px 50px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, .2), 0px -1px 4px rgba(0, 0, 0, .2);
+border-radius: 15px;
+position: relative;
+}
+.header {
+    /* height: 100px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 40px;
+}
+.dateDiv {
+display: inline-flex;
+align-items: center;
+justify-content: space-between;
+color: #fff;
+width: 100%;
+font-size: 18px;
+}
+
+.inputDiv {
+    width: 100%;
+    display: inline-flex;
+    gap: 3px;
+}
+#inputField {
+    width: 100%;
+    height: 40px;
+    border: 2px solid #333;
+    background-color: #fff;
+    padding-left: 10px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+#inputField:focus {
+    outline: none;
+}
+
+#saveBtn {
+    display: inline-block;
+    padding: 0 15px;
+       border: 2px solid #333;
+    background-color: #fff;
+    cursor: pointer;
+    transition: 100ms;
+    border-radius: 5px;
+}
+    #saveBtn:active {
+        transform: scale(1.02 );
+    }
+
+.todoListBox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 40px;
+}
+    .eachList {
+        /* background-color: #f3f3f3; */
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        color: #333;
+        font-size: 18px;
+        font-weight: 500;
+        width: inherit;
+        padding: 10px 15px;
+        gap: 5px;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, .2), 0px -1px 4px rgba(0, 0, 0, .2);
+    }
+
+.listText {
+    margin-right: auto;
+    color: #fff;
+}
+.optionBtn {
+cursor: pointer;
+display: flex;
+/* flex-direction: column; */
+position: relative;
+}
+.optionBtn svg {
+    transform: rotate(90deg);
+    z-index: 1;
+}
+
+.dropDown {
+position: absolute;
+top: 0;
+right: 15px;
+display: none;
+background-color: #fff;
+border-radius: 5px;
+padding: 10px;
+transition: 1000ms;
+line-height: 2;
+}
+
+.open.dropDown {
+    display: flex;
+    flex-direction: column;
+}
+
+#inputField.warning {
+    border: 2px solid #f00;
+    animation-name: shake;
+    animation-duration: .3s;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25%, 75% {
+        transform: translateX(-2px);
+    }
+    50% {
+        transform: translateX(2px);
+    }
+}
+
+.toastBox {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.toast {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+    height: 50px;
+    width: 300px;
+    position: relative;
+    transform: translateX(100%);
+    overflow: hidden;
+    animation: slideIn .5s linear forwards;
+}
+
+@keyframes slideIn {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.toast svg {
+    margin-right: 10px;
+}
+.toast::after {
+    content: "";
+    height: 4px;
+    width: 100%;
+    background-color: #008000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: animate 5s linear forwards;
+}
+.toast.error::after {
+    background-color: #f00;
+}
+
+@keyframes animate {
+    100% {
+        width: 0;
+    }
+}
+
+
+@media screen and (max-width: 460px) {
+    #container {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        border-radius: 0;
+        overflow-y: auto;
+    }
+    .header {
+        padding-top: 40px;
+    }
+    .header h1 {
+        margin-bottom: 70px;
+    }
+}
