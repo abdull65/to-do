@@ -163,7 +163,8 @@ line-height: 2;
     flex-direction: column;
     position: absolute;
     bottom: 20px;
-    right: 5px;
+    right: 0;
+    left: 0;
 }
 .toast {
     font-size: 16px;
@@ -173,18 +174,18 @@ line-height: 2;
     background-color: #ffffff;
     border-radius: 5px;
     padding: 10px;
-    margin: 5px 0;
+    margin: 5px auto;
     height: 50px;
     width: 300px;
     position: relative;
-    transform: translateX(100%);
+    transform: translateY(100%);
     overflow: hidden;
     animation: slideIn .5s linear forwards;
 }
 
 @keyframes slideIn {
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
