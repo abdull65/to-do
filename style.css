@@ -228,4 +228,7 @@ line-height: 2;
     .header h1 {
         margin-bottom: 70px;
     }
+    .toastBox {
+        bottom: 50px;
+    }
 }
